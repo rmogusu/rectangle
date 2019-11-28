@@ -1,17 +1,19 @@
 <h2>Exciting stats on your rectangle! </h2>
 
 {{#if myRectangle }}
-   <p><h3>Your rectangle's length is {{ myRectangle.length }}.</h3></p>
-   <p><h3>Your rectangle's width is {{ myRectangle.width }}.</h3></p>
+    <p><h3>Your rectangle's height is {{ myRectangle.height }}.</h3></p>
+    <p><h3>Your rectangle's width is {{ myRectangle.width }}.</h3></p>
 
-   {{#if myRectangle.shape}}
-       <p><h3>Your rectangle is a square.</h3></p>
-       {{myCube.surfaceArea}} units surface area and <br>
-       {{myCube.volume}} units volume.
-   {{else}}
-       <p><h3>Your rectangle isn't a square, sorry.</h3></p>
-   {{/if}}
+
+
+    {{#if myRectangle.shape}}
+        <p><h3>Your rectangle is a square.</h3></p>
+        {{myCube.surfaceArea}} units surface area and <br>
+        {{myCube.volume}} units volume.
+    {{else}}
+        <p><h3>Your rectangle isn't a square, sorry.</h3></p>
+    {{/if}}
 
 {{else}}
-   <p><h3>No details found. </h3></p>
+    <p><h3>No details found. </h3></p>
 {{/if }}

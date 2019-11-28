@@ -1,23 +1,25 @@
 package models;
 
 public class Cube {
-    private Rectangle mFace;
-    public Cube(Rectangle rectangle) {
 
-        mFace = rectangle;
+    private Rectangle face;
+
+    public Cube(Rectangle rectangle) {
+        face = rectangle;
     }
 
     public Rectangle getFace() {
-        return mFace;
+        return face;
     }
 
     public int volume() {
-        int length = mFace.getLength();
-        return length * length * length;
-
+        int height = face.getLength();
+        return height * height * height;
     }
 
+
     public int surfaceArea() {
-        return mFace.area() * 6;
+        return face.area() * 6;
+
     }
 }

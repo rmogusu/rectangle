@@ -1,19 +1,21 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import models.Cube;
 import models.Rectangle;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import static spark.Spark.get;
+import static spark.Spark.post;
 
-
-import static spark.Spark.*;
-
-
+/**
+ * Created by staff on 7/10/17.
+ */
 public class App {
     public static void main(String[] args) {
-        staticFileLocation ("/public");
+
         get("/", (req, res) -> {
             Map<String, ArrayList<Rectangle>> model = new HashMap<>();
             ArrayList myRectangleArrayList = Rectangle.getAll();
@@ -29,7 +31,7 @@ public class App {
             model.put("myRectangle", myRectangle);
 
             if (myRectangle.getShape()) {
-                Cube myCube = new Cube(myRectangle);
+                Cube myCube = new Cube (myRectangle);
                 model.put("myCube", myCube);
             }
             return new ModelAndView(model, "rectangle-detail.hbs");
