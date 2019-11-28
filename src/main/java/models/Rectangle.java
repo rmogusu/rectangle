@@ -1,55 +1,53 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by staff on 7/10/17.
- */
 public class Rectangle {
-    private int height;
-    private int width;
-    private static ArrayList<Rectangle> mInstances = new ArrayList<>();
+    private int mLength;
+    private int mWidth;
     private Boolean shape;
-
-
-    public Rectangle(int height, int width) {
-        this.height = height;
-        this.width = width;
-        this.shape = isSquare();
-        mInstances.add(this);
+    private static List<Rectangle> instances = new ArrayList<Rectangle> ();
+    private static ArrayList<Rectangle> mInstances = new ArrayList<Rectangle> ();
+    public Rectangle(int length, int width) {
+        this.mLength = length;
+        this.mWidth = width;
+        instances.add(this);
     }
 
-    public  void clearAllPlaces() {
+    public static ArrayList getAll() {
+        return  mInstances;
+    }
 
-        return mInstances.clear ();
+    public static void clearAllPlaces() {
+        instances.clear();
     }
 
     public int getLength() {
-        return height;
+        return this.mLength;
     }
 
     public int getWidth() {
-        return width;
-    }
-    public static ArrayList<Rectangle> all() {
-        return mInstances;
+        return this.mWidth;
     }
 
-    public boolean getShape(){
-        return shape;
-    }
-
-    public boolean isSquare(){
-        if (height == width){
+    public boolean isSquare() {
+        if (mLength == mWidth){
             return true;
         }
         else {
             return false;
         }
     }
-
     public int area() {
-        return height * width;
+        return mLength * mWidth;
+    }
+    public static List<Rectangle> all() {
+        return instances;
+
     }
 
+    public boolean getShape() {
+        return isSquare ();
+    }
 }
