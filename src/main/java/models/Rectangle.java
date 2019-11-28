@@ -19,9 +19,9 @@ public class Rectangle {
         mInstances.add(this);
     }
 
-    public static void clearAllPlaces() {
+    public  void clearAllPlaces() {
 
-        return
+        return mInstances.clear ();
     }
 
     public int getLength() {
